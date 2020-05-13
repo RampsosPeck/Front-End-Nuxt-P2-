@@ -48,6 +48,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/mixins/user.js'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -75,9 +76,9 @@ export default {
       strategies: {
           local: {
               endpoints: {
-                  login: { url: 'login', method: 'post', propertyName: 'meta.token' },
-                  logout: { url: 'logout', method: 'post' },
-                  user: { url: 'user', method: 'get', propertyName: 'data' }
+                  login: { url: '/login', method: 'post', propertyName: 'meta.token' },
+                  logout: { url: '/logout', method: 'post' },
+                  user: { url: '/user', method: 'get', propertyName: 'data' }
               }
           }
       }
