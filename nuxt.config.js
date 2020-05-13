@@ -44,6 +44,10 @@ export default {
   */
   css: [
   ],
+
+  router: {
+     middleware: ["clearValidationErrors","guest"]
+  },
   /*
   ** Plugins to load before mounting the App
   */

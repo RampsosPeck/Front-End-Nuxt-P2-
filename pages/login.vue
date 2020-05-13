@@ -5,7 +5,7 @@
 	<form @submit.prevent="submit">
 	  <div class="form-group">
 	    <label for="exampleInputEmail1">Email address</label>
-	    <input v-model.trim="form.email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" autofocus>
+	    <input v-model.trim="form.email" type="email" class="form-control" placeholder="Enter email" autofocus>
 	    <small  class="form-text text-danger" v-if="errors.email">{{ errors.email[0] }}</small>
 	  </div>
 	  <div class="form-group">
@@ -22,6 +22,7 @@
 
 <script>
 	export default {
+		middleware: ['guest'],
 		data(){
 			return {
 				form: {
@@ -35,7 +36,9 @@
 				await this.$auth.loginWith("local", {
 					data: this.form
 				})
-				this.$router.push('/')
+				this.$router.push({
+					path:this.$route.query.redirect || "/profile"
+				})
 			}
 		}
 	};
