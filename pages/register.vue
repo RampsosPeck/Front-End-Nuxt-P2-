@@ -47,7 +47,7 @@
 					}
 				})
 				this.$router.push({
-					path: this.$route.query.redirect || "/profile"
+					path: this.$route.query.redirect || "/dashboard"
 				})
 			}
 		}
