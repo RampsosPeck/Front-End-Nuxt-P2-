@@ -1,18 +1,16 @@
-import Vue from 'vue'
-import {mapGetters} from 'vuex'
+import Vue from "vue";
+import { mapGetters } from "vuex";
 
-const validation = {
+const Validation = {
 	install(Vue, options) {
 		Vue.mixin({
 			computed: {
 				...mapGetters({
-					errors: 'validation/errors',
+					errors: "validation/errors"
 				})
 			}
 		});
 	}
 };
 
-Vue.use(validation);
-
-
+Vue.use(Validation);
